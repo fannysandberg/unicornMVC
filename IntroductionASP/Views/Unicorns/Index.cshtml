@@ -1,0 +1,13 @@
+﻿@model IntroductionASP.Models.Unicorn[]
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    @foreach (var unicorn in Model)
+    {
+        <h1>@unicorn.Name</h1><br/><p>Colour: @unicorn.Colour, Sparklelevel: @unicorn.SparkleLevel</p>
+    }
+</body>
+</html>

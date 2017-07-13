@@ -1,0 +1,18 @@
+﻿@using IntroductionASP.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customers</title>
+</head>
+<body>
+    <h1>Customers</h1>
+    <ul>
+        @foreach (var item in (Customer[])ViewData["Customers"])
+        {
+            <li>@(item.CompanyName) (@item.EmployeeCount)</li>
+
+
+        }
+    </ul>
+</body>
+</html>
