@@ -1,0 +1,26 @@
+﻿@using IntroductionASP.Models
+@model WatchToolsIndexVM[]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watch tools</title>
+</head>
+<body>
+    <h1>Watch tools</h1>
+    <table>
+        @foreach (var tool in Model)
+        {
+            <tr>
+                <td>@tool.Name</td>
+                <td>@tool.Price</td>
+                <td>@if (!tool.IsInStock)
+                {
+                    <span>Out of stock</span>
+
+                }
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

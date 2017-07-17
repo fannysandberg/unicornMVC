@@ -16,6 +16,7 @@ namespace IntroductionASP.Models
 
         };
 
+
         public static Customer[] GetAllCustomers()
         {
             return customerList
@@ -33,6 +34,28 @@ namespace IntroductionASP.Models
         {
             return unicornList
                 .ToArray();
+        }
+
+        static List<WatchTool> watchToolList = new List<WatchTool>
+        {
+            new WatchTool {Id = 1, Name = "Oiler", Description = "A nice oiler indeed.", Price = 10, InventoryCount = 2, Supplier = "Bosses Oilers", Weight = 25},
+            new WatchTool {Id = 2, Name = "Screwdriver", Description = "A tasty drink.", Price = 40, InventoryCount = 0, Supplier = "Al's Liquor", Weight = 375}
+        };
+        internal static WatchToolsIndexVM[] GetAllWatchTools()
+        {
+
+            return watchToolList
+                .OrderBy(t => t.Name)
+                .Select(t => new WatchToolsIndexVM
+                {
+                    Name = t.Name,
+                    Price = t.Price,
+                    IsInStock = t.InventoryCount > 0
+
+                })
+                .ToArray();
+
+            
         }
     }
 }
